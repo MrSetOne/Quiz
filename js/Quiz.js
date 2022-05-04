@@ -164,3 +164,23 @@ function goToLeaderboard() {
 btnPlay.addEventListener('click', goToStart)
 btnWellcome.addEventListener('click', goToStart)
 btnLeaderboard.addEventListener('click', goToLeaderboard)
+
+
+submitBtn.addEventListener('click', function(ev){
+    ev.preventDefault()
+
+    let saveUser = localStorage.getItem(userNameInput.value) || []
+
+    let users = {
+        name : userNameInput.value
+        //Score :
+    }
+
+    saveUser.push(users)
+
+    localStorage.setItem(userNameInput.value , /**saveUser.Score.value */)
+})
+
+pageLeaderboard.addEventListener('click', function(){
+    
+})
