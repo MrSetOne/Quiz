@@ -1,3 +1,7 @@
+'use strict'
+
+
+//constants of question and answer
 const preguntas = {
     "response_code": 0,
     "results": [
@@ -116,8 +120,34 @@ const preguntas = {
 
   console.log(preguntas)
 
-const starform = document.getElementById('star-form')
+
+//constants of navbar
+const navItem = document.getElementById('nav-item')
+const navLink = document.getElementById('nav-link')
+
+//constants of banana
+const platano = document.getElementById('platano')
+
+//constants of form
+const starForm = document.getElementById('star-form')
+const textInput = document.getElementById('text-input')
+const submitBtn = document.getElementById('submit-btn')
+
+//constants of question container
 const questionContainer = document.getElementById('question-container')
+const btnContainer = document.getElementById('btn-container')
+const btn = document.getElementById('btn')
 const questionBtn = document.getElementById('question-btn')
 
+//--------------------------------------------------------------------------------------
+
+const playButton = ()=>{
+
+}
+
+
+
+const leaderBoard = ()=>{
+
+}
 
