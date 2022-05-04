@@ -162,6 +162,6 @@ function goToStart() {
 }
 
 
-btnPlay.addEventListener('click', goToStart)
+btnPlay.addEventListener('click', goToStart(pageStart))
 
 // btnLeaderboard.addEventListener('click', toLeaderboard)
