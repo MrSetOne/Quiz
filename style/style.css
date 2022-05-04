@@ -1,0 +1,28 @@
+/* VARIABLES */
+
+:root {
+    --fontl: 2.8rem;
+    --fontm: 2rem;
+    --fonts: 1.5rem;
+}
+
+
+/* CSS INIT */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
