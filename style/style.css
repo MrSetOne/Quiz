@@ -125,11 +125,12 @@ body {
 /* MAIN CONTENT */
 
 main>* {
-    width: 80rem;
+    width: min(90vw, 80rem);
     margin: 0 auto;
     height: 90%;
     background-color: var(--cprimary);
     border-radius: 1rem;
+    padding: 5rem;
 }
 
 
@@ -138,4 +139,60 @@ main>* {
 .footer {
     justify-content: flex-end;
     background-color: var(--cdarck);
+    gap: 2rem;
+    padding: 0 2.5rem;
+}
+
+.footer__item a {
+    display: flex;
+    background-color: var(--cprimary);
+    gap: .5rem;
+    font-size: var(--fonts);
+    align-items: center;
+    padding: .2rem .5rem;
+    color: var(--cdarck);
+    border-radius: .2rem;
+    opacity: 1;
+    /* Aquí hay que poner la transicion para el hover */
+}
+
+@media (max-width: 615px) {
+    .nav__link {
+        width: 7rem;
+    }
+    .nav__link span {
+        display: none;
+    }
+}
+
+
+/* VIEWS */
+
+.main__wellcome {
+    flex-direction: column;
+}
+
+.main__wellcome img {
+    width: 35%;
+}
+
+.main__wellcome h2 {
+    font-size: 5rem;
+}
+
+.main__wellcome p {
+    font-size: var(--fontl);
+}
+
+.main__wellcome button {
+    padding: .5rem 1rem;
+    font-size: var(--fontl);
+    width: 15rem;
+    border: 1px solid var(--cdarck);
+    border-radius: .5rem;
+    background: none;
+    color: var(--cblack);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
