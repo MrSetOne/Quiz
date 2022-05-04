@@ -10,21 +10,39 @@
 </head>
 
 <body>
-    <nav>
-        <div id=""></div>
-        <div id=""></div>
-        <div id=""></div>
-    </nav>
-    <div id="question-container" class="hide">
-        <div id="question"></div>
-        <div id="answer0"></div>
-        <div id="answer1"></div>
-        <div id="answer2"></div>
-        <div id="answer3"></div>
-        <button id="acept"></button>
-        <button id="next"></button>
-    </div>
-    <footer id=""></footer>
+    <header class="header">
+        <nav class="header__nav">
+            <h1 class="nav__item">Quiz</h1>
+            <button class="nav__item">Play</button>
+            <button class="nav__item">leaderboard</button>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="main__wellcome">
+            <h2>¡¡¡PLATANO!!!</h2>
+        </div>
+        <div class="main__start">
+            <form class="start__form" id="start-form">
+                <input type="text">
+                <button type="submit"></button>
+            </form>
+        </div>
+        <div class="main__question" id="question-container">
+            <img src="" alt="">
+            <h2></h2>
+            <div>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+            <button id="question-btn"></button>
+        </div>
+        <div class="main__leaderboard">
+            <!-- Tabla de puntuaciones -->
+        </div>
+    </main>
+    <footer></footer>
     <script src="./js/Quiz.js"></script>
 </body>
 
