@@ -14,10 +14,10 @@
 <body>
     <header class="header">
         <nav class="header__nav">
-            <h1 class="nav__item">Quiz</h1>
-            <div class="nav__item">
-                <button class="nav__link">Play</button>
-                <button class="nav__link">leaderboard</button>
+            <h1 class="nav__item" id="nav-item">Quiz</h1>
+            <div class="nav__item" id="nav-item">
+                <button class="nav__link" id="nav-link">Play</button>
+                <button class="nav__link" id="nav-link">leaderboard</button>
             </div>
         </nav>
     </header>
@@ -27,18 +27,18 @@
         </div>
         <div class="main__start d-none">
             <form class="start__form" id="start-form">
-                <input type="text">
-                <button type="submit"></button>
+                <input type="text" id="text-input">
+                <button type="submit" id="submit-btn"></button>
             </form>
         </div>
         <div class="main__question d-none" id="question-container">
             <img src="" alt="">
             <h2></h2>
-            <div>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+            <div id="btn-container">
+                <button id="btn"></button>
+                <button id="btn"></button>
+                <button id="btn"></button>
+                <button id="btn"></button>
             </div>
             <button id="question-btn"></button>
         </div>
