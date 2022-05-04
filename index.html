@@ -16,28 +16,28 @@
         <nav class="header__nav">
             <div class="nav__brand">
                 <img src="./assets/logo.png" alt="GameQuiz logo">
-                <h1 class="nav__item" id="nav-item">¡GameQuiz!</h1>
+                <h1 class="nav__item">¡GameQuiz!</h1>
             </div>
-            <div class="nav__items" id="nav-item">
-                <button class="nav__link nav__link--active" id="nav-link"><i class="fa-solid fa-play"></i><span>Play</span></button>
-                <button class="nav__link" id="nav-link"><i class="fa-solid fa-ranking-star"></i><span>Leaderboard</span></button>
+            <div class="nav__items">
+                <button class="nav__link nav__link--active" id="btn-play"><i class="fa-solid fa-play"></i><span>Play</span></button>
+                <button class="nav__link" id="btn-Leaderboard"><i class="fa-solid fa-ranking-star"></i><span>Leaderboard</span></button>
             </div>
         </nav>
     </header>
     <main class="main flexcenter">
-        <div class="main__wellcome flexcenter">
+        <div class="main__wellcome flexcenter" id="wellcome-page">
             <img src="./assets/logo.png" alt="Logo">
             <h2>Wellcome to GameQuiz</h2>
             <p>Are you ready to put your gaming knowledge to the test?</p>
-            <button>Start</button>
+            <button id="btn-wellcome">Start</button>
         </div>
-        <div class="main__start d-none">
+        <div class="main__start d-none" id="start-page">
             <form class="start__form" id="start-form">
-                <input type="text" id="text-input">
+                <input type="text" id="userName-input">
                 <button type="submit" id="submit-btn"></button>
             </form>
         </div>
-        <div class="main__question d-none" id="question-container">
+        <div class="main__question d-none" id="question-page">
             <img src="" alt="">
             <h2></h2>
             <div id="btn-container">
@@ -48,8 +48,8 @@
             </div>
             <button id="question-btn"></button>
         </div>
-        <div class="main__leaderboard d-none">
-            <!-- Tabla de puntuaciones -->
+        <div class="main__leaderboard d-none" id="leaderboard-page">
+            <h2>Leadboard</h2>
         </div>
     </main>
     <footer class="footer flexcenter">
