@@ -116,8 +116,8 @@ const preguntas = {
 
   console.log(preguntas)
 
-  const starform = document.getElementById('star-form')
-  const questionContainer = document.getElementById('question-container')
-  const questionBtn = document.getElementById('question-btn')
+const starform = document.getElementById('star-form')
+const questionContainer = document.getElementById('question-container')
+const questionBtn = document.getElementById('question-btn')
 
-  
+
