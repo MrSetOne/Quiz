@@ -67,6 +67,7 @@ body {
 
 .header {
     width: 100%;
+    background-color: var(--cdarck);
 }
 
 nav {
@@ -76,11 +77,20 @@ nav {
     padding: 0 2.5rem
 }
 
-.main__wellcome,
-.main__start,
-.main__question,
-.main__leaderboard {
+
+/* MAIN CONTENT */
+
+main>* {
     width: 80rem;
     margin: 0 auto;
     height: 90%;
+    background-color: #8ECAE6;
+}
+
+
+/* FOOTER */
+
+.footer {
+    justify-content: flex-end;
+    background-color: var(--cdarck);
 }
