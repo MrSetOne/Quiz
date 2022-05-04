@@ -125,7 +125,7 @@ body {
 /* MAIN CONTENT */
 
 main>* {
-    width: 80rem;
+    width: min(90vw, 80rem);
     margin: 0 auto;
     height: 90%;
     background-color: var(--cprimary);
@@ -138,4 +138,28 @@ main>* {
 .footer {
     justify-content: flex-end;
     background-color: var(--cdarck);
+    gap: 2rem;
+    padding: 0 2.5rem;
+}
+
+.footer__item a {
+    display: flex;
+    background-color: var(--cprimary);
+    gap: .5rem;
+    font-size: var(--fonts);
+    align-items: center;
+    padding: .2rem .5rem;
+    color: var(--cdarck);
+    border-radius: .2rem;
+    opacity: 1;
+    /* Aquí hay que poner la transicion para el hover */
+}
+
+@media (max-width: 615px) {
+    .nav__link {
+        width: 7rem;
+    }
+    .nav__link span {
+        display: none;
+    }
 }
