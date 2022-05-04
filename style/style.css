@@ -26,3 +26,57 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
+
+
+/* UTILITIES */
+
+.flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+
+/* BODY */
+
+body {
+    display: grid;
+    grid-template-rows: 5rem 1fr 4rem;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* NAV */
+
+.header {
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem
+}
+
+.main__wellcome,
+.main__start,
+.main__question,
+.main__leaderboard {
+    width: 80rem;
+    margin: 0 auto;
+    height: 90%;
+}
