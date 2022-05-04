@@ -4,7 +4,7 @@
     --fontl: 2.8rem;
     --fontm: 2rem;
     --fonts: 1.5rem;
-    --cprimary: #8ECAE6;
+    --cprimary: #c5e2f0;
     --csecundary: #219EBC;
     --cdarck: #023047;
     --cimportant: #FFB703;
@@ -60,6 +60,7 @@ body {
     grid-template-rows: 5rem 1fr 4rem;
     height: 100vh;
     width: 100vw;
+    background-color: var(--csecundary);
 }
 
 
@@ -70,11 +71,28 @@ body {
     background-color: var(--cdarck);
 }
 
-nav {
+.header__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2.5rem
+    padding: 0 2.5rem;
+    height: 100%;
+}
+
+.nav__brand {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav__brand img {
+    height: 4rem;
+}
+
+.nav__brand h1 {
+    font-size: var(--fontl);
+    margin: 0;
+    color: var(--csecundary);
 }
 
 
@@ -84,7 +102,8 @@ main>* {
     width: 80rem;
     margin: 0 auto;
     height: 90%;
-    background-color: #8ECAE6;
+    background-color: var(--cprimary);
+    border-radius: 2rem;
 }
 
 
