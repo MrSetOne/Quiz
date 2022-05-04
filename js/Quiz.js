@@ -151,17 +151,16 @@ function dNoneAll() {
     pageStart.classList.add('d-none')
 }
 
-// function goTo(page) {
-//     dNoneAll()
-//     page.classList.remove('d-none')
-// }
-
 function goToStart() {
     dNoneAll()
     pageStart.classList.remove('d-none')
 }
 
+function goToLeaderboard() {
+    dNoneAll()
+    pageLeaderboard.classList.remove('d-none')
+}
 
-btnPlay.addEventListener('click', goToStart(pageStart))
-
-// btnLeaderboard.addEventListener('click', toLeaderboard)
+btnPlay.addEventListener('click', goToStart)
+btnWellcome.addEventListener('click', goToStart)
+btnLeaderboard.addEventListener('click', goToLeaderboard)
