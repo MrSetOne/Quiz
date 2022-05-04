@@ -8,6 +8,7 @@
     --csecundary: #219EBC;
     --cdarck: #023047;
     --cimportant: #FFB703;
+    --cbluebrand: #7292de;
 }
 
 
@@ -92,7 +93,7 @@ body {
 .nav__brand h1 {
     font-size: var(--fontl);
     margin: 0;
-    color: var(--csecundary);
+    color: var(--cbluebrand);
 }
 
 
@@ -103,7 +104,7 @@ main>* {
     margin: 0 auto;
     height: 90%;
     background-color: var(--cprimary);
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 
 
