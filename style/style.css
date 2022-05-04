@@ -9,6 +9,8 @@
     --cdarck: #023047;
     --cimportant: #FFB703;
     --cbluebrand: #7292de;
+    --cwhite: #ffffff;
+    --cblack: #000000;
 }
 
 
@@ -94,6 +96,29 @@ body {
     font-size: var(--fontl);
     margin: 0;
     color: var(--cbluebrand);
+}
+
+.nav__items {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav__link {
+    padding: .5rem 1rem;
+    font-size: var(--fonts);
+    width: 15rem;
+    border: 1px solid var(--cprimary);
+    border-radius: .5rem;
+    background: none;
+    color: var(--cwhite);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav__link--active {
+    background-color: var(--cprimary);
+    color: var(--cdarck);
 }
 
 
