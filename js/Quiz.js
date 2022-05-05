@@ -31,9 +31,10 @@ const pageLeaderboard = document.getElementById('leaderboard-page')
 //constants of question and answer
 let questions = []
 
+// Current user
+let currentUser = ""
 
-//--------------------------------------------------------------------------------------
-
+// Functions
 function getQuestions() {
     axios
         .get('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
@@ -63,19 +64,6 @@ function goTo(page) {
     page.classList.remove('d-none')
 }
 
-btnPlay.addEventListener('click', () => goTo(pageStart))
-btnWellcome.addEventListener('click', () => goTo(pageStart))
-btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
-submitBtn.addEventListener('click', () => goTo(pageQuestion))
-
-startForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    currentUser = userNameInput.value;
-    goTo(pageQuestion);
-})
-
-let currentUser = ""
-
 function selectedOption() { //Devuelve el numero en indice
     if (option1.checked == true) {
         return 0;
@@ -93,6 +81,22 @@ function selectedOption() { //Devuelve el numero en indice
     }
 }
 
+// NavListeners
+btnPlay.addEventListener('click', () => goTo(pageStart))
+btnWellcome.addEventListener('click', () => goTo(pageStart))
+btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
+submitBtn.addEventListener('click', () => goTo(pageQuestion))
+
+startForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    currentUser = userNameInput.value;
+    goTo(pageQuestion);
+})
+
+
+
+
+/* ------------------ DevZone ------------------ */
 
 
 
