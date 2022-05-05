@@ -30,7 +30,7 @@
         </nav>
     </header>
     <main class="main flexcenter">
-        <div class="main__wellcome flexcenter" id="wellcome-page">
+        <div class="main__wellcome flexcenter d-none" id="wellcome-page">
             <img src="./assets/logo.png" alt="Logo">
             <h2 class="textcenter">Wellcome to GameQuiz</h2>
             <p class="textcenter">Are you ready to put your gaming knowledge to the test?</p>
@@ -42,14 +42,28 @@
                 <button type="submit" id="submit-btn">Start</button>
             </form>
         </div>
-        <div class="main__question d-none" id="question-page">
+        <div class="main__question" id="question-page">
             <img src="" alt="">
-            <h2></h2>
+            <h2>lakjhfldsj kjla fdslkjdsahljd sahlfjhadsljkhflsa djklsafll ashlfas?</h2>
             <form>
-                <div>
-                    <input type="radio" id="huey" name="drone" value="huey" checked>
-                    <label for="huey">Huey</label>
-                </div>
+                <fieldset>
+                    <div class="question__option" id="option-1">
+                        <input type="radio" name="drone" value="huey">
+                        <label for="huey">Huey</label>
+                    </div>
+                    <div class="question__option" id="option-2">
+                        <input type="radio" name="drone" value="huey">
+                        <label for="huey">Huey</label>
+                    </div>
+                    <div class="question__option" id="option-3">
+                        <input type="radio" name="drone" value="huey">
+                        <label for="huey">Huey</label>
+                    </div>
+                    <div class="question__option" id="option-4">
+                        <input type="radio" name="drone" value="huey">
+                        <label for="huey">Huey</label>
+                    </div>
+                </fieldset>
 
                 <button type="submit"></button>
             </form>
