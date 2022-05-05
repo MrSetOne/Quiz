@@ -132,6 +132,10 @@ const startForm = document.getElementById('start-form') //Form
 const userNameInput = document.getElementById('userName-input') //Input
 const submitBtn = document.getElementById('submit-btn') // Submit
 
+//constats of question page
+const pageQuestion = document.getElementById('question-page')
+
+
 
 /* -----------FALTA POR ESTRUCTURAR CORRECTAMENTE----------- */
 //constants of question container
@@ -159,6 +163,7 @@ function goTo(page) {
 btnPlay.addEventListener('click', () => goTo(pageStart))
 btnWellcome.addEventListener('click', () => goTo(pageStart))
 btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
+submitBtn.addEventListener('click', ()=> goTo(pageQuestion))
 
 startForm.addEventListener('click', (e) => {
     e.preventDefault();

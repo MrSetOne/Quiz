@@ -13,3 +13,5 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 - [ ] Seleccion de respuesta en radial
 
 - [ ] BtnFalconMaster5
+
+- [ ] submitBtn.addEventListener('click', ()=> goTo(pageQuestion)) (Shan)
