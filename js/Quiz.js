@@ -165,25 +165,3 @@ btnPlay.addEventListener('click', goToStart)
 btnWellcome.addEventListener('click', goToStart)
 btnLeaderboard.addEventListener('click', goToLeaderboard)
 
-//Save player name
-submitBtn.addEventListener('click', function(ev){
-    ev.preventDefault()
-
-    let saveUser = localStorage.getItem(userNameInput.value) || []
-
-    let users = {
-        name : userNameInput.value
-    }
-
-    saveUser.push(users)
-
-    localStorage.setItem(userNameInput.value , saveUserScore())
-    
-})
-
-//Save player Score
-function saveUserScore(){
-    
-}
-
-//
