@@ -153,6 +153,7 @@ function dNoneAll() {
     pageWellcome.classList.add('d-none')
     pageLeaderboard.classList.add('d-none')
     pageStart.classList.add('d-none')
+    pageQuestion.classList.add('d-none')
 }
 
 function goTo(page) {
