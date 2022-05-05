@@ -18,8 +18,8 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
 - [ ] Selector de dificultad
 
-- [ ] Analizar caracteres raros
+- [X] Analizar caracteres raros
 
-    - [ ] &quot
+    - [X] &quot
 
-    - [ ] &#039
+    - [X] &#039

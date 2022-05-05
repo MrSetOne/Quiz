@@ -1,16 +1,3 @@
-//constants of question and answer
-let questions = []
-
-
-//Download
-axios
-    .get('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
-    .then((res) => {
-        questions = res.data.results;
-        console.log(questions);
-    })
-    .catch((err) => console.error(err));
-
 //constants of navbar
 const btnPlay = document.getElementById('btn-play')
 const btnLeaderboard = document.getElementById('btn-Leaderboard')
@@ -41,7 +28,28 @@ console.log(questionTitle);
 //constants of leaderboard page
 const pageLeaderboard = document.getElementById('leaderboard-page')
 
+//constants of question and answer
+let questions = []
+
+
 //--------------------------------------------------------------------------------------
+
+function getQuestions() {
+    axios
+        .get('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
+        .then((res) => {
+            questions = res.data.results;
+            questions.forEach(item => {
+                item.question = item.question.replaceAll(/&quot;/ig, "'").replaceAll(/&eacute;/ig, "é").replaceAll(/&#039;/ig, "")
+                item.incorrect_answers.forEach(incorrect => {
+                    incorrect.replaceAll(/&quot;/ig, "'").replaceAll(/&eacute;/ig, "é").replaceAll(/&#039;/ig, "");
+                })
+            });
+            console.log(questions);
+
+        })
+        .catch((err) => console.error(err));
+}
 
 function dNoneAll() {
     pageWellcome.classList.add('d-none')
@@ -85,16 +93,17 @@ function selectedOption() { //Devuelve el numero en indice
     }
 }
 
-function printQuestion() {
-    questionTitle.innerText = questions[0].question
-    option01.innerText = questions[0].correct_answer
-    option02.innerText = questions[0].incorrect_answers[0]
-    option03.innerText = questions[0].incorrect_answers[1]
-    option04.innerText = questions[0].incorrect_answers[2]
-}
+
+
+
+// function printQuestion() {
+//     questionTitle.innerText = questions[0].question
+//     option01.innerText = questions[0].correct_answer
+//     option02.innerText = questions[0].incorrect_answers[0]
+//     option03.innerText = questions[0].incorrect_answers[1]
+//     option04.innerText = questions[0].incorrect_answers[2]
+// }
 
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    printQuestion()
-
 })
