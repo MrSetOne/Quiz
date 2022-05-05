@@ -134,7 +134,7 @@ body {
 /* MAIN CONTENT */
 
 main>* {
-    width: min(90vw, 80rem);
+    width: min(90vw, 106rem);
     margin: 0 auto;
     height: 90%;
     background-color: var(--cprimary);
@@ -179,7 +179,7 @@ main>* {
 
 .main__wellcome {
     flex-direction: column;
-    gap: 5rem;
+    gap: 2rem;
 }
 
 .main__wellcome img {
