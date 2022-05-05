@@ -151,16 +151,19 @@ function dNoneAll() {
     pageStart.classList.add('d-none')
 }
 
-function goToStart() {
+function goTo(page) {
     dNoneAll()
-    pageStart.classList.remove('d-none')
+    page.classList.remove('d-none')
 }
 
-function goToLeaderboard() {
-    dNoneAll()
-    pageLeaderboard.classList.remove('d-none')
-}
+btnPlay.addEventListener('click', () => goTo(pageStart))
+btnWellcome.addEventListener('click', () => goTo(pageStart))
+btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
 
-btnPlay.addEventListener('click', goToStart)
-btnWellcome.addEventListener('click', goToStart)
-btnLeaderboard.addEventListener('click', goToLeaderboard)
+startForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentUser = userNameInput.value;
+
+})
+
+let currentUser = ""
