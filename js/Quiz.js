@@ -16,6 +16,7 @@ const submitBtn = document.getElementById('submit-btn') // Submit
 const pageQuestion = document.getElementById('question-page') //Page
 const questionTitle = document.getElementById('question-title') // Question
 const questionForm = document.getElementById('question-form') //
+const heroCount = document.getElementById('hero-count')
 const option1 = document.getElementById('option1')
 const option2 = document.getElementById('option2')
 const option3 = document.getElementById('option3')
@@ -24,15 +25,20 @@ const option01 = document.getElementById('option01')
 const option02 = document.getElementById('option02')
 const option03 = document.getElementById('option03')
 const option04 = document.getElementById('option04')
-console.log(questionTitle);
-//constants of leaderboard page
+    //leaderboard page's constant
 const pageLeaderboard = document.getElementById('leaderboard-page')
 
-//constants of question and answer
+//question and answer's constant
 let questions = []
 
-// Current user
+//current user
 let currentUser = ""
+
+//question counter
+let counterQuestion = 0;
+
+//current Answers
+let currentAnswers = []
 
 // Functions
 function getQuestions() {
@@ -81,18 +87,47 @@ function selectedOption() { //Devuelve el numero en indice
     }
 }
 
+function generateRandomAnswers() {
+    questions[counterQuestion].incorrect_answers.forEach(item => {
+        currentAnswers.push({ answer: item, correct: false })
+    })
+    currentAnswers.splice((Math.floor(Math.random() * 4)), 0, { answer: questions[counterQuestion].correct_answer, correct: true })
+}
+
+function printQuiz() {
+    heroCount.innerHTML = `${counterQuestion+1}/<span>10</span>`;
+    questionTitle.innerText = questions[counterQuestion].question;
+    option01.innerText = currentAnswers[0].answer
+    option02.innerText = currentAnswers[1].answer
+    option03.innerText = currentAnswers[2].answer
+    option04.innerText = currentAnswers[3].answer
+}
+
 // NavListeners
-btnPlay.addEventListener('click', () => goTo(pageStart))
-btnWellcome.addEventListener('click', () => goTo(pageStart))
+btnPlay.addEventListener('click', () => {
+    goTo(pageStart);
+    getQuestions()
+})
+btnWellcome.addEventListener('click', () => {
+    goTo(pageStart);
+    getQuestions()
+})
 btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
 submitBtn.addEventListener('click', () => goTo(pageQuestion))
 
 startForm.addEventListener('submit', (e) => {
     e.preventDefault();
     currentUser = userNameInput.value;
+    counterQuestion = 0;
+    generateRandomAnswers()
+    printQuiz()
+
+
+
     goTo(pageQuestion);
 })
 
+getQuestions();
 
 
 
