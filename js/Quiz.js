@@ -1,6 +1,7 @@
 //constants of question and answer
 let questions = []
 
+
 //Download
 axios
     .get('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
@@ -32,6 +33,10 @@ const option1 = document.getElementById('option1')
 const option2 = document.getElementById('option2')
 const option3 = document.getElementById('option3')
 const option4 = document.getElementById('option4')
+const option01 = document.getElementById('option01')
+const option02 = document.getElementById('option02')
+const option03 = document.getElementById('option03')
+const option04 = document.getElementById('option04')
 console.log(questionTitle);
 //constants of leaderboard page
 const pageLeaderboard = document.getElementById('leaderboard-page')
@@ -82,6 +87,10 @@ function selectedOption() { //Devuelve el numero en indice
 
 function printQuestion() {
     questionTitle.innerText = questions[0].question
+    option01.innerText = questions[0].correct_answer
+    option02.innerText = questions[0].incorrect_answers[0]
+    option03.innerText = questions[0].incorrect_answers[1]
+    option04.innerText = questions[0].incorrect_answers[2]
 }
 
 questionForm.addEventListener('submit', (e) => {
