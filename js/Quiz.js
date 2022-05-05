@@ -132,17 +132,13 @@ const startForm = document.getElementById('start-form') //Form
 const userNameInput = document.getElementById('userName-input') //Input
 const submitBtn = document.getElementById('submit-btn') // Submit
 
-//constats of question page
-const pageQuestion = document.getElementById('question-page')
-
-
-
-/* -----------FALTA POR ESTRUCTURAR CORRECTAMENTE----------- */
-//constants of question container
-// const questionContainer = document.getElementById('question-container')
-// const btnContainer = document.getElementById('btn-container')
-// const btn = document.getElementById('btn')
-// const questionBtn = document.getElementById('question-btn')
+//constants of question page
+const pageQuestion = document.getElementById('question-page') //Page
+const questionForm = document.getElementById('question-form') //
+const option1 = document.getElementById('option1')
+const option2 = document.getElementById('option2')
+const option3 = document.getElementById('option3')
+const option4 = document.getElementById('option4')
 
 //constants of leaderboard page
 const pageLeaderboard = document.getElementById('leaderboard-page')
@@ -164,7 +160,7 @@ function goTo(page) {
 btnPlay.addEventListener('click', () => goTo(pageStart))
 btnWellcome.addEventListener('click', () => goTo(pageStart))
 btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
-submitBtn.addEventListener('click', ()=> goTo(pageQuestion))
+submitBtn.addEventListener('click', () => goTo(pageQuestion))
 
 startForm.addEventListener('click', (e) => {
     e.preventDefault();
