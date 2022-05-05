@@ -165,7 +165,29 @@ submitBtn.addEventListener('click', () => goTo(pageQuestion))
 startForm.addEventListener('click', (e) => {
     e.preventDefault();
     currentUser = userNameInput.value;
-
+    goTo(pageQuestion);
 })
 
 let currentUser = ""
+
+function selectedOption() { //Devuelve el numero en indice
+    if (option1.checked == true) {
+        return 0;
+    }
+    if (option2.checked == true) {
+        return 1;
+    }
+    if (option3.checked == true) {
+        return 2;
+    }
+    if (option4.checked == true) {
+        return 3;
+    } else {
+        return false
+    }
+}
+
+questionForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    console.log(selectedOption())
+})
