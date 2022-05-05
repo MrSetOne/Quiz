@@ -60,7 +60,7 @@ btnWellcome.addEventListener('click', () => goTo(pageStart))
 btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
 submitBtn.addEventListener('click', () => goTo(pageQuestion))
 
-startForm.addEventListener('click', (e) => {
+startForm.addEventListener('submit', (e) => {
     e.preventDefault();
     currentUser = userNameInput.value;
     goTo(pageQuestion);

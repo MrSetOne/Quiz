@@ -15,3 +15,11 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 - [ ] BtnFalconMaster5
 
 - [X] submitBtn.addEventListener('click', ()=> goTo(pageQuestion)) (Shan)
+
+- [ ] Selector de dificultad
+
+- [ ] Analizar caracteres raros
+
+    - [ ] &quot
+
+    - [ ] &#039
