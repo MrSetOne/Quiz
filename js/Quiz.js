@@ -46,14 +46,6 @@ function getQuestions() {
         .get('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
         .then((res) => {
             questions = res.data.results;
-            questions.forEach(item => {
-                item.question = item.question.replaceAll(/&quot;/ig, "'").replaceAll(/&eacute;/ig, "é").replaceAll(/&#039;/ig, "")
-                item.incorrect_answers.forEach(incorrect => {
-                    incorrect.replaceAll(/&quot;/ig, "'").replaceAll(/&eacute;/ig, "é").replaceAll(/&#039;/ig, "");
-                })
-            });
-            console.log(questions);
-
         })
         .catch((err) => console.error(err));
 }
@@ -88,19 +80,21 @@ function selectedOption() { //Devuelve el numero en indice
 }
 
 function generateRandomAnswers() {
+    console.log(questions);
     questions[counterQuestion].incorrect_answers.forEach(item => {
         currentAnswers.push({ answer: item, correct: false })
     })
     currentAnswers.splice((Math.floor(Math.random() * 4)), 0, { answer: questions[counterQuestion].correct_answer, correct: true })
+    console.log(currentAnswers);
 }
 
 function printQuiz() {
     heroCount.innerHTML = `${counterQuestion+1}/<span>10</span>`;
-    questionTitle.innerText = questions[counterQuestion].question;
-    option01.innerText = currentAnswers[0].answer
-    option02.innerText = currentAnswers[1].answer
-    option03.innerText = currentAnswers[2].answer
-    option04.innerText = currentAnswers[3].answer
+    questionTitle.innerHTML = questions[counterQuestion].question;
+    option01.innerHTML = currentAnswers[0].answer
+    option02.innerHTML = currentAnswers[1].answer
+    option03.innerHTML = currentAnswers[2].answer
+    option04.innerHTML = currentAnswers[3].answer
 }
 
 // NavListeners
