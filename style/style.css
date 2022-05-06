@@ -266,7 +266,8 @@ main>* {
 }
 
 .question__option input {
-    opacity: .001;
+    position: absolute;
+    opacity: 0;
 }
 
 .question__option label {

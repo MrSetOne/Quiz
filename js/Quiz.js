@@ -26,7 +26,7 @@ const option02 = document.getElementById('option02')
 const option03 = document.getElementById('option03')
 const option04 = document.getElementById('option04')
 const allOptions = document.getElementsByClassName("question__option")
-let selectedOption = document.getElementsByClassName("question__option--selected")
+    // let selectedOption = document.getElementsByClassName("question__option--selected")
 
 
 //leaderboard page's constant
@@ -66,22 +66,22 @@ function goTo(page) {
     page.classList.remove('d-none')
 }
 
-// function selectedOption() { // De momento no funciona
-//     if (option1.checked == true) {
-//         return 0;
-//     }
-//     if (option2.checked == true) {
-//         return 1;
-//     }
-//     if (option3.checked == true) {
-//         return 2;
-//     }
-//     if (option4.checked == true) {
-//         return 3;
-//     } else {
-//         return false
-//     }
-// }
+function selectedOption() {
+    if (option1.checked == true) {
+        return 0;
+    }
+    if (option2.checked == true) {
+        return 1;
+    }
+    if (option3.checked == true) {
+        return 2;
+    }
+    if (option4.checked == true) {
+        return 3;
+    } else {
+        return false
+    }
+}
 
 function generateRandomAnswers() {
     questions[counterQuestion].incorrect_answers.forEach(item => {
@@ -100,12 +100,13 @@ function printQuiz() {
     option02.innerHTML = currentAnswers[1].answer
     option03.innerHTML = currentAnswers[2].answer
     option04.innerHTML = currentAnswers[3].answer
-    console.log(currentAnswers)
 }
 
 function deleteSelecteds() {
     Array.from(allOptions).forEach(item => {
-        item.classList.remove("question__option--selected")
+        item.classList.remove("question__option--selected");
+        item.children[0].checked = false;
+
     })
 
 }
@@ -133,10 +134,9 @@ startForm.addEventListener('submit', (e) => {
 
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(Array.from(selectedOption))
+    console.log(selectedOption());
     counterQuestion++
     deleteSelecteds();
-
     // Saber si he acertado
 
     printQuiz()
@@ -146,10 +146,9 @@ Array.from(allOptions).forEach(item => {
     item.addEventListener("click", () => {
         deleteSelecteds()
         item.classList.add("question__option--selected")
+        item.children[0].checked = true
     })
 });
-
-console.log(Array.from(selectedOption))
 
 getQuestions();
 
