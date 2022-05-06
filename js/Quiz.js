@@ -25,7 +25,11 @@ const option01 = document.getElementById('option01')
 const option02 = document.getElementById('option02')
 const option03 = document.getElementById('option03')
 const option04 = document.getElementById('option04')
-    //leaderboard page's constant
+const allOptions = document.getElementsByClassName("question__option")
+let selectedOption = document.getElementsByClassName("question__option--selected")
+
+
+//leaderboard page's constant
 const pageLeaderboard = document.getElementById('leaderboard-page')
 
 //question and answer's constant
@@ -62,25 +66,24 @@ function goTo(page) {
     page.classList.remove('d-none')
 }
 
-function selectedOption() { //Devuelve el numero en indice
-    if (option1.checked == true) {
-        return 0;
-    }
-    if (option2.checked == true) {
-        return 1;
-    }
-    if (option3.checked == true) {
-        return 2;
-    }
-    if (option4.checked == true) {
-        return 3;
-    } else {
-        return false
-    }
-}
+// function selectedOption() { // De momento no funciona
+//     if (option1.checked == true) {
+//         return 0;
+//     }
+//     if (option2.checked == true) {
+//         return 1;
+//     }
+//     if (option3.checked == true) {
+//         return 2;
+//     }
+//     if (option4.checked == true) {
+//         return 3;
+//     } else {
+//         return false
+//     }
+// }
 
 function generateRandomAnswers() {
-    console.log(questions);
     questions[counterQuestion].incorrect_answers.forEach(item => {
         currentAnswers.push({ answer: item, correct: false })
     })
@@ -89,12 +92,22 @@ function generateRandomAnswers() {
 }
 
 function printQuiz() {
+    currentAnswers = []
+    generateRandomAnswers()
     heroCount.innerHTML = `${counterQuestion+1}/<span>10</span>`;
     questionTitle.innerHTML = questions[counterQuestion].question;
     option01.innerHTML = currentAnswers[0].answer
     option02.innerHTML = currentAnswers[1].answer
     option03.innerHTML = currentAnswers[2].answer
     option04.innerHTML = currentAnswers[3].answer
+    console.log(currentAnswers)
+}
+
+function deleteSelecteds() {
+    Array.from(allOptions).forEach(item => {
+        item.classList.remove("question__option--selected")
+    })
+
 }
 
 // NavListeners
@@ -113,13 +126,30 @@ startForm.addEventListener('submit', (e) => {
     e.preventDefault();
     currentUser = userNameInput.value;
     counterQuestion = 0;
-    generateRandomAnswers()
     printQuiz()
-
-
-
     goTo(pageQuestion);
+    // para borrar
 })
+
+questionForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    console.log(Array.from(selectedOption))
+    counterQuestion++
+    deleteSelecteds();
+
+    // Saber si he acertado
+
+    printQuiz()
+})
+
+Array.from(allOptions).forEach(item => {
+    item.addEventListener("click", () => {
+        deleteSelecteds()
+        item.classList.add("question__option--selected")
+    })
+});
+
+console.log(Array.from(selectedOption))
 
 getQuestions();
 
@@ -136,7 +166,3 @@ getQuestions();
 //     option03.innerText = questions[0].incorrect_answers[1]
 //     option04.innerText = questions[0].incorrect_answers[2]
 // }
-
-questionForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-})

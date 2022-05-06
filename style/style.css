@@ -261,6 +261,10 @@ main>* {
     border-radius: 1rem;
 }
 
+.question__option--selected {
+    background-color: green;
+}
+
 .question__option input {
     opacity: .001;
 }
