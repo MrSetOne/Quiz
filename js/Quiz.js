@@ -138,12 +138,14 @@ startForm.addEventListener('submit', (e) => {
     counterQuestion = 0;
     printQuiz()
     goTo(pageQuestion);
-    // para borrar
 })
 
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(selectedOption());
+    if (counterQuestion == 9) {
+        counterQuestion = 0;
+        goTo(pageLeaderboard); //Aqui hay que intruducir la pagina de salida.
+    }
     isTrue()
     deleteSelecteds();
     counterQuestion++;

@@ -290,3 +290,44 @@ main>* {
         gap: 1rem;
     }
 }
+
+
+/* STATS PAGE */
+
+.main__stats {
+    display: flex;
+}
+
+.stats__results {
+    position: relative;
+    background-color: var(--cdarck);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+
+.stats__results * {
+    position: absolute;
+    color: var(--cprimary);
+}
+
+.results__current {
+    font-size: 8rem;
+    top: 11%;
+    left: 12%;
+    text-align: center;
+}
+
+.results__bar {
+    font-size: 16rem;
+    top: 3%;
+    left: 33%;
+    transform: rotate(21deg);
+    font-weight: 400;
+}
+
+.results__total {
+    font-size: 8rem;
+    bottom: 14%;
+    right: 7%;
+}
