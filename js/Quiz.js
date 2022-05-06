@@ -44,6 +44,9 @@ let counterQuestion = 0;
 //current Answers
 let currentAnswers = []
 
+//current points
+let currentPoints = 0;
+
 // Functions
 function getQuestions() {
     axios
@@ -111,6 +114,12 @@ function deleteSelecteds() {
 
 }
 
+function isTrue() {
+    if (currentAnswers[selectedOption()].correct == true) {
+        currentPoints++;
+    }
+}
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -135,10 +144,9 @@ startForm.addEventListener('submit', (e) => {
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
     console.log(selectedOption());
-    counterQuestion++
+    isTrue()
     deleteSelecteds();
-    // Saber si he acertado
-
+    counterQuestion++;
     printQuiz()
 })
 
@@ -155,13 +163,3 @@ getQuestions();
 
 
 /* ------------------ DevZone ------------------ */
-
-
-
-// function printQuestion() {
-//     questionTitle.innerText = questions[0].question
-//     option01.innerText = questions[0].correct_answer
-//     option02.innerText = questions[0].incorrect_answers[0]
-//     option03.innerText = questions[0].incorrect_answers[1]
-//     option04.innerText = questions[0].incorrect_answers[2]
-// }
