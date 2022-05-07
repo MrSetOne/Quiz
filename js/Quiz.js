@@ -33,6 +33,7 @@ const endScore = document.getElementById('endScore')
 const endGraph = document.getElementById("endGraph")
 const playAgain = document.getElementById('play-again-btn')
 const showLeaderBoard = document.getElementById('leaderboard-btn')
+const positionScore = document.getElementById('position-score')
 
 //leaderboard page's constant
 const pageLeaderboard = document.getElementById('leaderboard-page')
@@ -175,10 +176,6 @@ function isTrue() {
     }
 }
 
-function leaderboardMaker() {
-    // Aquí va lo que ordena la db
-}
-
 function includeInDB() {
     let user = {};
     user.user = currentUser;
@@ -189,7 +186,7 @@ function includeInDB() {
 
 function printStats() {
     endScore.innerHTML = `${currentPoints}/10`
-        // Aqui falta el puesto en la leaderboard
+    positionScore.innerText = `#${leaderboardInfo.users.indexOf(currentUser)}`
 }
 
 function updateChart() {
