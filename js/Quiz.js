@@ -26,8 +26,13 @@ const option02 = document.getElementById('option02')
 const option03 = document.getElementById('option03')
 const option04 = document.getElementById('option04')
 const allOptions = document.getElementsByClassName("question__option")
-    // let selectedOption = document.getElementsByClassName("question__option--selected")
 
+// stats pages's constant
+const pageStats = document.getElementById('stats-page')
+const endScore = document.getElementById('endScore')
+const endGraph = document.getElementById("endGraph")
+const playAgain = document.getElementById('play-again-btn')
+const showLeaderBoard = document.getElementById('leaderboard-btn')
 
 //leaderboard page's constant
 const pageLeaderboard = document.getElementById('leaderboard-page')
@@ -47,7 +52,22 @@ let currentAnswers = []
 //current points
 let currentPoints = 0;
 
+//DB
+let hotDB = []
+
 // Functions
+
+const dbSync = {
+    toLocalStorage: () => {
+        localStorage.db = JSON.stringify(hotDB);
+    },
+    toHotDB: () => {
+        if (localStorage.db != undefined) {
+            hotDB = JSON.parse(localStorage.db)
+        }
+    }
+}
+
 function getQuestions() {
     axios
         .get('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
@@ -62,6 +82,7 @@ function dNoneAll() {
     pageLeaderboard.classList.add('d-none')
     pageStart.classList.add('d-none')
     pageQuestion.classList.add('d-none')
+    pageStats.classList.add('d-none')
 }
 
 function goTo(page) {
@@ -120,14 +141,12 @@ function isTrue() {
     }
 }
 
-const tst = document.getElementById("tst")
-
-function compareCorrects() {
+function graphCorrects() {
     const data = {
         labels: ['Correct', 'faliled'],
         datasets: [{
             label: 'Points',
-            data: [7, 3],
+            data: [currentPoints, ((currentPoints - 10) * -1)],
             backgroundColor: [
                 '#023047',
                 '#02304781',
@@ -136,7 +155,7 @@ function compareCorrects() {
             rotation: 210,
             borderRadius: 200,
             circumference: 300,
-            spacing: 20,
+            spacing: 10,
             cutout: 65,
             hoverOffset: 0,
             hoverBorderColor: 'rgba(255, 99, 132,0)',
@@ -146,7 +165,7 @@ function compareCorrects() {
 
 
 
-    new Chart(tst, {
+    new Chart(endGraph, {
         type: 'doughnut',
         data,
         options: {
@@ -155,7 +174,23 @@ function compareCorrects() {
             }
         }
     })
+}
 
+function leaderboardMaker() {
+    // Aquí va lo que ordena la db
+}
+
+function includeInDB() {
+    let user = {};
+    user.user = currentUser;
+    user.points = currentPoints;
+    hotDB.push(user)
+    console.log(hotDB);
+}
+
+function printStats() {
+    endScore.innerHTML = `${currentPoints}/10`
+        // Aqui falta el puesto en la leaderboard
 }
 
 // NavListeners
@@ -180,14 +215,20 @@ startForm.addEventListener('submit', (e) => {
 
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
+    isTrue()
     if (counterQuestion == 9) {
         counterQuestion = 0;
-        goTo(pageLeaderboard); //Aqui hay que intruducir la pagina de salida.
+        includeInDB();
+        graphCorrects();
+        printStats();
+        goTo(pageStats);
+        currentPoints = 0;
     }
-    isTrue()
     deleteSelecteds();
     counterQuestion++;
     printQuiz()
+    console.log(currentPoints);
+    console.log(counterQuestion);
 })
 
 Array.from(allOptions).forEach(item => {
@@ -198,8 +239,17 @@ Array.from(allOptions).forEach(item => {
     })
 });
 
-getQuestions();
+playAgain.addEventListener('click', () => {
+    goTo(pageStart);
+    getQuestions()
+})
 
-compareCorrects();
+showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
+
+dbSync.toHotDB()
+
+console.log(endGraph.value);
 
 /* ------------------ DevZone ------------------ */
+
+console.log(pageStats.childNodes[1].childNodes[3].childNodes[1].childNodes);
