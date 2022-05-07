@@ -186,7 +186,7 @@ function includeInDB() {
 
 function printStats() {
     endScore.innerHTML = `${currentPoints}/10`
-    positionScore.innerText = `#${leaderboardInfo.users.indexOf(currentUser)}`
+    positionScore.innerText = `#${(leaderboardInfo.users.indexOf(currentUser))+1}`
 }
 
 function updateChart() {

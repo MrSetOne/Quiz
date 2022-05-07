@@ -4,13 +4,13 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
 ## Todo
 
-- [ ] Poner tiempo limite
+- [ ] Poner tiempo limite (Probar con promesas) (Shan y Mike)
 
-- [ ] Definir estilos y maquetacion (Mike)
+- [X] Definir estilos y maquetacion (Mike)
 
-- [ ] Burger Menu (Mike)
+- [ ] Burger Menu (Mike) //Opcional
 
-- [ ] Seleccion de respuesta en radial
+- [X] Seleccion de respuesta en radial
 
 - [ ] BtnFalconMaster5
 
@@ -24,31 +24,21 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
     - [X] &#039
 
------------------------------
+- [ ] Maquetar y funcionalizar leaderboard (Mañana)
 
-Config:
+- [ ] Dar estilos a Starter
 
-const config = {
-  type: 'doughnut',
-  data: data,
-};
+- [ ] Animaciones frontEnd
 
-------------------------------
+    - [ ] Transiciones entre Pages
 
-Setup:
+    - [ ] Transicion verificacion de respuestas
 
-const data = {
-  labels: [
-    'correct',
-    'incorrect'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [7, 3],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)'
-    ],
-    hoverOffset: 4
-  }]
-};
+    - [ ] Transiciones de botones
+
+        - [ ] Submit
+
+        - [ ] Menú
+
+    - [ ] Spinner
+
