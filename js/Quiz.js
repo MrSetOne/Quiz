@@ -120,6 +120,44 @@ function isTrue() {
     }
 }
 
+const tst = document.getElementById("tst")
+
+function compareCorrects() {
+    const data = {
+        labels: ['Correct', 'faliled'],
+        datasets: [{
+            label: 'Points',
+            data: [7, 3],
+            backgroundColor: [
+                '#023047',
+                '#02304781',
+            ],
+            borderColor: ['rgba(255, 99, 132,0)', 'rgba(255, 99, 132,0)'],
+            rotation: 210,
+            borderRadius: 200,
+            circumference: 300,
+            spacing: 20,
+            cutout: 65,
+            hoverOffset: 0,
+            hoverBorderColor: 'rgba(255, 99, 132,0)',
+            hoverBorderWidth: 0,
+        }]
+    };
+
+
+
+    new Chart(tst, {
+        type: 'doughnut',
+        data,
+        options: {
+            legend: {
+                display: false
+            }
+        }
+    })
+
+}
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -162,6 +200,6 @@ Array.from(allOptions).forEach(item => {
 
 getQuestions();
 
-
+compareCorrects();
 
 /* ------------------ DevZone ------------------ */

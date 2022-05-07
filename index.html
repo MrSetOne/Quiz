@@ -13,8 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="./js/Quiz.js"></script>
 </head>
 
@@ -74,11 +73,25 @@
             </form>
         </div>
         <div class="main__stats" id="stats-page">
-            <div class="stats__results">
-                <h2 class="results__current" id="final-score">6</h2>
-                <h2 class="results__bar">/</h2>
-                <h2 class="results__total">10</h2>
+            <div class="stats__score">
+                <h2>Score:</h2>
+                <div class="score__graph">
+                    <figure>
+                        <p>7/10</p>
+                        <canvas id="tst"></canvas>
+                    </figure>
+                </div>
             </div>
+            <div class="stats__position">
+                <h2>Your position in the ranking is:</h2>
+                <div class="position__medal flexcenter">
+                    <h3>#5</h3>
+                </div>
+            </div>
+            <nav class="stats__nav  w-100">
+                <input type="button" value="Play again">
+                <input type="button" value="Leadboard">
+            </nav>
         </div>
         <div class="main__leaderboard d-none" id="leaderboard-page">
             <h2>Leadboard</h2>
