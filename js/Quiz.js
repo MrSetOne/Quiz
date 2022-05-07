@@ -55,7 +55,7 @@ let currentPoints = 0;
 //DB
 let hotDB = []
 
-let graficaDeMierda = new Chart(endGraph, {
+let scoreChart = new Chart(endGraph, {
     type: 'doughnut',
     data: {
         labels: ['Correct', 'faliled'],
@@ -188,9 +188,9 @@ function printStats() {
 }
 
 function updateChart() {
-    graficaDeMierda.data.datasets[0].data = []
-    graficaDeMierda.data.datasets[0].data = [currentPoints, ((currentPoints - 10) * -1)]
-    graficaDeMierda.update()
+    scoreChart.data.datasets[0].data = []
+    scoreChart.data.datasets[0].data = [currentPoints, ((currentPoints - 10) * -1)]
+    scoreChart.update()
 }
 
 // NavListeners
@@ -218,18 +218,20 @@ questionForm.addEventListener('submit', (e) => {
     isTrue()
     if (counterQuestion == 9) {
         counterQuestion = 0;
+        deleteSelecteds();
         updateChart()
         includeInDB();
         dbSync.toLocalStorage();
         printStats();
         goTo(pageStats);
         currentPoints = 0;
+    } else {
+        deleteSelecteds();
+        counterQuestion++;
+        printQuiz()
+        console.log(currentPoints);
+        console.log(counterQuestion);
     }
-    deleteSelecteds();
-    counterQuestion++;
-    printQuiz()
-    console.log(currentPoints);
-    console.log(counterQuestion);
 })
 
 Array.from(allOptions).forEach(item => {
@@ -252,5 +254,3 @@ dbSync.toHotDB()
 console.log(endGraph.value);
 
 /* ------------------ DevZone ------------------ */
-
-console.log(pageStats.childNodes[1].childNodes[3].childNodes[1].childNodes);
