@@ -220,6 +220,7 @@ questionForm.addEventListener('submit', (e) => {
         counterQuestion = 0;
         updateChart()
         includeInDB();
+        dbSync.toLocalStorage();
         printStats();
         goTo(pageStats);
         currentPoints = 0;
