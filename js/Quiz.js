@@ -55,6 +55,35 @@ let currentPoints = 0;
 //DB
 let hotDB = []
 
+let graficaDeMierda = new Chart(endGraph, {
+    type: 'doughnut',
+    data: {
+        labels: ['Correct', 'faliled'],
+        datasets: [{
+            label: 'Points',
+            data: [currentPoints, ((currentPoints - 10) * -1)],
+            backgroundColor: [
+                '#023047',
+                '#02304781',
+            ],
+            borderColor: ['rgba(255, 99, 132,0)', 'rgba(255, 99, 132,0)'],
+            rotation: 210,
+            borderRadius: 200,
+            circumference: 300,
+            spacing: 10,
+            cutout: 65,
+            hoverOffset: 0,
+            hoverBorderColor: 'rgba(255, 99, 132,0)',
+            hoverBorderWidth: 0,
+        }]
+    },
+    options: {
+        legend: {
+            display: false
+        }
+    }
+})
+
 // Functions
 
 const dbSync = {
@@ -141,41 +170,6 @@ function isTrue() {
     }
 }
 
-function graphCorrects() {
-    const data = {
-        labels: ['Correct', 'faliled'],
-        datasets: [{
-            label: 'Points',
-            data: [currentPoints, ((currentPoints - 10) * -1)],
-            backgroundColor: [
-                '#023047',
-                '#02304781',
-            ],
-            borderColor: ['rgba(255, 99, 132,0)', 'rgba(255, 99, 132,0)'],
-            rotation: 210,
-            borderRadius: 200,
-            circumference: 300,
-            spacing: 10,
-            cutout: 65,
-            hoverOffset: 0,
-            hoverBorderColor: 'rgba(255, 99, 132,0)',
-            hoverBorderWidth: 0,
-        }]
-    };
-
-
-
-    new Chart(endGraph, {
-        type: 'doughnut',
-        data,
-        options: {
-            legend: {
-                display: false
-            }
-        }
-    })
-}
-
 function leaderboardMaker() {
     // Aquí va lo que ordena la db
 }
@@ -191,6 +185,12 @@ function includeInDB() {
 function printStats() {
     endScore.innerHTML = `${currentPoints}/10`
         // Aqui falta el puesto en la leaderboard
+}
+
+function updateChart() {
+    graficaDeMierda.data.datasets[0].data = []
+    graficaDeMierda.data.datasets[0].data = [currentPoints, ((currentPoints - 10) * -1)]
+    graficaDeMierda.update()
 }
 
 // NavListeners
@@ -218,8 +218,8 @@ questionForm.addEventListener('submit', (e) => {
     isTrue()
     if (counterQuestion == 9) {
         counterQuestion = 0;
+        updateChart()
         includeInDB();
-        graphCorrects();
         printStats();
         goTo(pageStats);
         currentPoints = 0;
