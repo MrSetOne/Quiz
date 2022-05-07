@@ -84,6 +84,11 @@ let scoreChart = new Chart(endGraph, {
     }
 })
 
+let leaderboardInfo = {
+    users: [],
+    points: []
+}
+
 // Functions
 
 const dbSync = {
@@ -193,6 +198,23 @@ function updateChart() {
     scoreChart.update()
 }
 
+function updateLeaderboard() {
+    hotDB.forEach(item => {
+        leaderboardInfo.users.push(item.user);
+        leaderboardInfo.points.push(item.points);
+    });
+    for (let i = 1; i < leaderboardInfo.points.length; i++) {
+        if (leaderboardInfo.points[i] > leaderboardInfo.points[(i - 1)]) {
+            leaderboardInfo.points.splice((i - 1), 0, leaderboardInfo.points[i]);
+            leaderboardInfo.users.splice((i - 1), 0, leaderboardInfo.users[i]);
+            leaderboardInfo.points.splice((i + 1), 1);
+            leaderboardInfo.users.splice((i + 1), 1);
+            i = 0;
+        }
+    }
+}
+
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -219,9 +241,11 @@ questionForm.addEventListener('submit', (e) => {
     if (counterQuestion == 9) {
         counterQuestion = 0;
         deleteSelecteds();
-        updateChart()
+        updateChart();
         includeInDB();
         dbSync.toLocalStorage();
+        updateLeaderboard();
+        console.log(leaderboardInfo);
         printStats();
         goTo(pageStats);
         currentPoints = 0;
