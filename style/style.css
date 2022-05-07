@@ -374,11 +374,11 @@ main>* {
 
 @media (max-width: 800px) {
     .position__medal {
-        height: 15rem;
-        width: 15rem;
+        height: 20rem;
+        width: 20rem;
     }
     .position__medal h3 {
-        font-size: 9rem;
+        font-size: 12rem;
     }
     .stats__position h2 {
         margin: 0;
