@@ -37,9 +37,12 @@
             <p class="textcenter">Are you ready to put your gaming knowledge to the test?</p>
             <button id="btn-wellcome">Start</button>
         </div>
-        <div class="main__start d-none" id="start-page">
+        <div class="main__start flexcenter" id="start-page">
             <form class="start__form" id="start-form">
-                <input type="text" id="userName-input">
+                <div class="form__name">
+                    <label id='name-label' class="name__label" for="userName-input">Escribe tu nombre</label>
+                    <input type="text" id="userName-input">
+                </div>
                 <button type="submit" id="submit-btn">Start</button>
             </form>
         </div>
@@ -93,7 +96,7 @@
                 <input type="button" value="Leadboard" id="leaderboard-btn">
             </nav>
         </div>
-        <div class="main__leaderboard" id="leaderboard-page">
+        <div class="main__leaderboard d-none" id="leaderboard-page">
             <h2>-Leader<span>board</span>-</h2>
             <table class="leaderboard__table">
                 <tr>

@@ -11,6 +11,7 @@ const pageStart = document.getElementById('start-page') //Page
 const startForm = document.getElementById('start-form') //Form
 const userNameInput = document.getElementById('userName-input') //Input
 const submitBtn = document.getElementById('submit-btn') // Submit
+const nameLabel = document.getElementById('name-label') // Label
 
 //constants of question page
 const pageQuestion = document.getElementById('question-page') //Page
@@ -242,9 +243,11 @@ submitBtn.addEventListener('click', () => goTo(pageQuestion))
 startForm.addEventListener('submit', (e) => {
     e.preventDefault();
     currentUser = userNameInput.value;
+    userNameInput.value = ""
     counterQuestion = 0;
     printQuiz()
     goTo(pageQuestion);
+    nameLabel.classList.remove('name__label--styled')
 })
 
 questionForm.addEventListener('submit', (e) => {
@@ -282,6 +285,8 @@ playAgain.addEventListener('click', () => {
     goTo(pageStart);
     getQuestions()
 })
+
+userNameInput.addEventListener("click", () => nameLabel.classList.add('name__label--styled'))
 
 showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 

@@ -212,6 +212,60 @@ main>* {
 }
 
 
+/* START PAGE */
+
+.start__form {
+    width: min(100%, 59rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.form__name {
+    width: 100%;
+    height: 9rem;
+    position: relative;
+    font-size: 5rem;
+}
+
+.name__label {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    transition: .2s;
+}
+
+.form__name input {
+    font-size: 5rem;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid var(--cdarck);
+}
+
+.name__label--styled {
+    font-size: 1.5rem;
+    top: 18%;
+    left: 52%;
+}
+
+#submit-btn {
+    width: 70%;
+    font-size: 4rem;
+    padding: 2rem;
+    border: var(--cdarck) 3px solid;
+    background-color: transparent;
+    border-radius: 2rem;
+    color: var(--cdarck);
+}
+
+
 /* QUESTION PAGE */
 
 .main__question {
