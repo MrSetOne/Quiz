@@ -223,8 +223,12 @@ function updateLeaderboard() {
 
 function printLeaderboard() {
     for (let i = 0; i < 10; i++) {
-        nameCells[i].innerText = hotDB[i].user;
-        scoreCells[i].innerText = hotDB[i].points
+        if (hotDB[i] != undefined) {
+            nameCells[i].innerText = hotDB[i].user;
+            scoreCells[i].innerText = hotDB[i].points
+        } else {
+            i = 10;
+        }
     }
 }
 
