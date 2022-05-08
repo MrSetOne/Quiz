@@ -604,7 +604,7 @@ main>* {
 
 .position__medal h3 {
     color: var(--cbluebrand);
-    font-size: 18rem;
+    font-size: 14rem;
 }
 
 @media (max-width: 800px) {
