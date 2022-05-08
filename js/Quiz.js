@@ -39,8 +39,7 @@ const positionScore = document.getElementById('position-score')
 const pageLeaderboard = document.getElementById('leaderboard-page')
 const nameCells = document.getElementsByClassName('table__name')
 const scoreCells = document.getElementsByClassName('table__score')
-
-console.log(scoreCells);
+console.log(nameCells);
 
 //question and answer's constant
 let questions = []
@@ -221,6 +220,12 @@ function updateLeaderboard() {
     console.log(hotDB);
 }
 
+function printLeaderboard() {
+    for (let i = 0; i < 10; i++) {
+        nameCells[i].innerText = hotDB[i].user;
+        scoreCells[i].innerText = hotDB[i].points
+    }
+}
 
 // NavListeners
 btnPlay.addEventListener('click', () => {
@@ -282,5 +287,9 @@ showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 dbSync.toHotDB()
 
 console.log(endGraph.value);
+
+console.log(hotDB);
+
+printLeaderboard()
 
 /* ------------------ DevZone ------------------ */
