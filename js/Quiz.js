@@ -37,6 +37,10 @@ const positionScore = document.getElementById('position-score')
 
 //leaderboard page's constant
 const pageLeaderboard = document.getElementById('leaderboard-page')
+const nameCells = document.getElementsByClassName('table__name')
+const scoreCells = document.getElementsByClassName('table__score')
+
+console.log(scoreCells);
 
 //question and answer's constant
 let questions = []

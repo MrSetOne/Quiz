@@ -406,3 +406,64 @@ main>* {
         gap: 1rem;
     }
 }
+
+
+/* LEADERBOARD PAGE */
+
+.main__leaderboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__leaderboard h2 {
+    font-size: 11rem;
+    font-weight: 700;
+    margin-bottom: clamp(1rem, 5vw, 5rem);
+}
+
+.main__leaderboard h2 span {
+    font-weight: 400;
+}
+
+.leaderboard__table {
+    width: 80%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.leaderboard__table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table__position {
+    width: 12rem;
+    text-align: center;
+}
+
+.table__position i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.table__position--first i {
+    color: #dcc168;
+}
+
+.table__position--second i {
+    color: #858791;
+}
+
+.table__position--third i {
+    color: #a67f58;
+}
+
+.table__score {
+    width: 12rem;
+}
+
+.table__name {
+    font-size: 2.4rem;
+}
