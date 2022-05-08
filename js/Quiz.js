@@ -258,6 +258,7 @@ questionForm.addEventListener('submit', (e) => {
         updateLeaderboard();
         dbSync.toLocalStorage();
         printStats();
+        printLeaderboard();
         goTo(pageStats);
         currentPoints = 0;
     } else {

@@ -24,7 +24,7 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
     - [X] &#039
 
-- [ ] Maquetar y funcionalizar leaderboard (Mañana)
+- [X] Maquetar y funcionalizar leaderboard
 
 - [ ] Dar estilos a Starter
 
@@ -42,6 +42,6 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
     - [ ] Spinner
 
-- [ ] Refactorizar updateLeaderboard()
+- [X] Refactorizar updateLeaderboard()
 
 - [ ] Refactorizar AnswersBtns
