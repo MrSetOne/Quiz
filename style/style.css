@@ -417,7 +417,7 @@ main>* {
 }
 
 .main__leaderboard h2 {
-    font-size: 11rem;
+    font-size: min(10vw, 11rem);
     font-weight: 700;
     margin-bottom: clamp(1rem, 5vw, 5rem);
 }
@@ -427,7 +427,7 @@ main>* {
 }
 
 .leaderboard__table {
-    width: 80%;
+    width: min(100%, 59rem);
     height: 100%;
     border-collapse: collapse;
     font-size: 1.7rem;
