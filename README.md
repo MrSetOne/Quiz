@@ -45,3 +45,5 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 - [X] Refactorizar updateLeaderboard()
 
 - [ ] Refactorizar AnswersBtns
+
+- [ ] Colocar la variante selected del nav
