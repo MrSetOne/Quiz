@@ -184,9 +184,20 @@ function includeInDB() {
     console.log(hotDB);
 }
 
+function yourPosition() {
+    let respuesta
+    hotDB.forEach((element, iteration) => {
+        if ((element.user == currentUser) && (element.points == currentPoints)) {
+            respuesta = iteration;
+        }
+    })
+    return respuesta
+}
+
 function printStats() {
     endScore.innerHTML = `${currentPoints}/10`
-    positionScore.innerText = `#${(leaderboardInfo.users.indexOf(currentUser))+1}`
+    console.log(yourPosition());
+    positionScore.innerText = `#${(yourPosition()+1)}`
 }
 
 function updateChart() {
@@ -196,19 +207,14 @@ function updateChart() {
 }
 
 function updateLeaderboard() {
-    hotDB.forEach(item => {
-        leaderboardInfo.users.push(item.user);
-        leaderboardInfo.points.push(item.points);
-    });
-    for (let i = 1; i < leaderboardInfo.points.length; i++) {
-        if (leaderboardInfo.points[i] > leaderboardInfo.points[(i - 1)]) {
-            leaderboardInfo.points.splice((i - 1), 0, leaderboardInfo.points[i]);
-            leaderboardInfo.users.splice((i - 1), 0, leaderboardInfo.users[i]);
-            leaderboardInfo.points.splice((i + 1), 1);
-            leaderboardInfo.users.splice((i + 1), 1);
+    for (let i = 1; i < hotDB.length; i++) {
+        if (hotDB[i].points > hotDB[(i - 1)].points) {
+            hotDB.splice((i - 1), 0, hotDB[i]);
+            hotDB.splice((i + 1), 1);
             i = 0;
         }
     }
+    console.log(hotDB);
 }
 
 
@@ -240,9 +246,8 @@ questionForm.addEventListener('submit', (e) => {
         deleteSelecteds();
         updateChart();
         includeInDB();
-        dbSync.toLocalStorage();
         updateLeaderboard();
-        console.log(leaderboardInfo);
+        dbSync.toLocalStorage();
         printStats();
         goTo(pageStats);
         currentPoints = 0;
