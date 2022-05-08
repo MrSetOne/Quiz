@@ -7,7 +7,7 @@
     --cprimary: #c5e2f0;
     --csecundary: #219EBC;
     --cdarck: #023047;
-    --cimportant: #FFB703;
+    --cimportant: #f3ce72;
     --cbluebrand: #7292de;
     --cwhite: #ffffff;
     --cblack: #000000;
@@ -395,10 +395,15 @@ main>* {
     height: 100%;
     background-color: #fff;
     border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.question__option--selected {
-    background-color: green;
+.question__option--selected .option__deco {
+    width: 45rem;
+    height: 45rem;
+    left: -37%;
 }
 
 .question__option input {
@@ -408,6 +413,30 @@ main>* {
 
 .question__option label {
     font-size: var(--fontl);
+    text-align: center;
+    z-index: 2;
+}
+
+.option__deco {
+    background-color: var(--cimportant);
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    left: -100%;
+    z-index: 1;
+    transition: .5s;
+}
+
+.option__deco p {
+    font-size: 8rem;
+    font-weight: 800;
+}
+
+.question__option:hover .option__deco {
+    width: 45rem;
+    height: 45rem;
+    left: -37%;
 }
 
 .form__submit,

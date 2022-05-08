@@ -37,7 +37,7 @@
             <p class="textcenter">Are you ready to put your gaming knowledge to the test?</p>
             <button id="btn-wellcome">Start</button>
         </div>
-        <div class="main__start flexcenter" id="start-page">
+        <div class="main__start flexcenter d-none" id="start-page">
             <form class="start__form" id="start-form">
                 <div class="form__name">
                     <label id='name-label' class="name__label" for="userName-input">Escribe tu nombre</label>
@@ -46,7 +46,7 @@
                 <button type="submit" id="submit-btn"><span>Start</span><span><i class="fa-solid fa-circle-right"></i></span></button>
             </form>
         </div>
-        <div class="main__question d-none" id="question-page">
+        <div class="main__question" id="question-page">
             <div class="question__hero flexcenter">
                 <p id="hero-count">/<span>10</span></p>
             </div>
@@ -54,18 +54,30 @@
             <form id="question-form">
                 <fieldset>
                     <div class="question__option flexcenter" id="option-1">
+                        <div class="option__deco flexcenter">
+                            <p>✓</p>
+                        </div>
                         <input type="radio" name="options" id="option1" value="opcion1">
                         <label for="option1" id="option01">Opcion1</label>
                     </div>
                     <div class="question__option flexcenter" id="option-2">
+                        <div class="option__deco flexcenter">
+                            <p>✓</p>
+                        </div>
                         <input type="radio" name="options" id="option2" value="opcion2">
                         <label for="option2" id="option02">Opcion2</label>
                     </div>
                     <div class="question__option flexcenter" id="option-3">
+                        <div class="option__deco flexcenter">
+                            <p>✓</p>
+                        </div>
                         <input type="radio" name="options" id="option3" value="opcion3">
                         <label for="option3" id="option03">Opcion3</label>
                     </div>
                     <div class="question__option flexcenter" id="option-4">
+                        <div class="option__deco flexcenter">
+                            <p>✓</p>
+                        </div>
                         <input type="radio" name="options" id="option4" value="opcion4">
                         <label for="option4" id="option04">Opcion4</label>
                     </div>
