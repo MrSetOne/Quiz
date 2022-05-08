@@ -35,6 +35,10 @@ html {
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
 
 /* UTILITIES */
 
@@ -123,6 +127,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav__link span {
+    color: var(--cprimary);
+    transition: .5s;
+    z-index: 2;
+}
+
+.nav__link::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: var(--cprimary);
+    transform: translate(-50%, -50%);
+    transition: .5s;
+    z-index: 1;
+}
+
+.nav__link:hover::after {
+    width: 20rem;
+    height: 20rem;
+}
+
+.nav__link:hover span {
+    color: var(--cdarck);
 }
 
 .nav__link--active {
@@ -170,7 +205,7 @@ main>* {
     .nav__link {
         width: 7rem;
     }
-    .nav__link span {
+    .nav__link span:nth-child(2) {
         display: none;
     }
 }

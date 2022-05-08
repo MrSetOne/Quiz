@@ -26,7 +26,7 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
 - [X] Maquetar y funcionalizar leaderboard
 
-- [ ] Dar estilos a Starter
+- [X] Dar estilos a Starter
 
 - [ ] Animaciones frontEnd
 
@@ -38,7 +38,7 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
         - [ ] Submit
 
-        - [ ] Menú
+        - [X] Menú
 
     - [ ] Spinner
 
