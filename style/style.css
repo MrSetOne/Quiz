@@ -8,6 +8,7 @@
     --csecundary: #219EBC;
     --cdarck: #023047;
     --cimportant: #f3ce72;
+    --cimportant2: #f8bb20;
     --cbluebrand: #7292de;
     --cwhite: #ffffff;
     --cblack: #000000;
@@ -404,6 +405,7 @@ main>* {
     width: 45rem;
     height: 45rem;
     left: -37%;
+    background-color: var(--cimportant2);
 }
 
 .question__option input {

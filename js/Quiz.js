@@ -168,7 +168,7 @@ function printQuiz() {
 function deleteSelecteds() {
     Array.from(allOptions).forEach(item => {
         item.classList.remove("question__option--selected");
-        item.children[0].checked = false;
+        item.children[1].checked = false;
 
     })
 
@@ -277,7 +277,7 @@ Array.from(allOptions).forEach(item => {
     item.addEventListener("click", () => {
         deleteSelecteds()
         item.classList.add("question__option--selected")
-        item.children[0].checked = true
+        item.children[1].checked = true
     })
 });
 
