@@ -95,6 +95,10 @@ let leaderboardInfo = {
     points: []
 }
 
+let hidenCountDown = 15;
+
+let countDownInterval = setInterval(chronoDown, 1000);
+
 // Functions
 
 const dbSync = {
@@ -262,6 +266,29 @@ function sendAnswer() {
     }
 }
 
+function resetCountDown() {
+    clearInterval(countDownInterval);
+    hidenCountDown = 15
+    visualCountDown.innerHTML = 15
+    countDownInterval = setInterval(chronoDown, 1000);
+}
+
+function chronoDown() {
+    hidenCountDown--;
+    visualCountDown.innerHTML = hidenCountDown;
+    if (hidenCountDown == 0) {
+        clearInterval(countDownInterval)
+        if (selectedOption() == false) {
+            sendAnswer();
+            resetCountDown();
+        } else {
+            isTrue();
+            sendAnswer();
+            resetCountDown()
+        }
+    }
+}
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -282,12 +309,14 @@ startForm.addEventListener('submit', (e) => {
     printQuiz()
     goTo(pageQuestion);
     nameLabel.classList.remove('name__label--styled')
+    resetCountDown()
 })
 
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
     isTrue();
     sendAnswer();
+    resetCountDown();
 })
 
 Array.from(allOptions).forEach(item => {
