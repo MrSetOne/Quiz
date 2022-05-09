@@ -402,9 +402,10 @@ main>* {
 }
 
 .question__option--selected .option__deco {
-    width: 45rem;
-    height: 45rem;
-    left: -37%;
+    width: 10rem;
+    height: 10rem;
+    left: 0;
+    bottom: 0;
     background-color: var(--cimportant2);
 }
 
@@ -425,20 +426,22 @@ main>* {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    left: -100%;
+    left: -12rem;
+    bottom: -6rem;
     z-index: 1;
     transition: .5s;
 }
 
 .option__deco p {
-    font-size: 8rem;
+    font-size: 4rem;
     font-weight: 800;
 }
 
 .question__option:hover .option__deco {
-    width: 45rem;
-    height: 45rem;
-    left: -37%;
+    width: 10rem;
+    height: 10rem;
+    left: 0;
+    bottom: 0;
 }
 
 .form__submit {

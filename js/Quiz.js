@@ -268,8 +268,6 @@ function resetTimerBar() {
     console.log('funciona');
 }
 
-console.log(timerBar.parentElement);
-
 function sendAnswer() {
     resetTimerBar()
     if (counterQuestion == 9) {
