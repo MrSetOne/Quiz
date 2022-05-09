@@ -312,7 +312,6 @@ btnWellcome.addEventListener('click', () => {
     getQuestions()
 })
 btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
-submitBtn.addEventListener('click', () => goTo(pageQuestion))
 
 startForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -350,9 +349,12 @@ userNameInput.addEventListener("click", () => nameLabel.classList.add('name__lab
 
 showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 
+// Añadir al sistema starter
+
 dbSync.toHotDB()
 
-
 printLeaderboard()
+
+clearInterval(countDownInterval)
 
 /* ------------------ DevZone ------------------ */
