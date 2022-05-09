@@ -414,7 +414,7 @@ main>* {
 }
 
 .question__option label {
-    font-size: var(--fontl);
+    font-size: 2rem;
     text-align: center;
     z-index: 2;
 }
@@ -491,6 +491,10 @@ main>* {
     left: -6rem;
     z-index: 1;
     transition: .5s;
+}
+
+#countDown {
+    color: var(--cdarck);
 }
 
 .form__submit button:hover::after {
@@ -717,10 +721,6 @@ main>* {
     width: 100%;
     height: 100%;
     background-color: var(--cdarck);
-}
-
-.timer__complete--run {
-    animation: timeBar 15s linear;
 }
 
 @keyframes timeBar {

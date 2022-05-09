@@ -4,15 +4,13 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
 ## Todo
 
-- [ ] Poner tiempo limite (Probar con promesas) (Shan y Mike)
+- [X] Poner tiempo limite (Probar con promesas) (Shan y Mike)
 
 - [X] Definir estilos y maquetacion (Mike)
 
-- [ ] Burger Menu (Mike) //Opcional
-
 - [X] Seleccion de respuesta en radial
 
-- [ ] BtnFalconMaster5
+- [X] BtnFalconMaster5
 
 - [X] submitBtn.addEventListener('click', ()=> goTo(pageQuestion)) (Shan)
 
@@ -36,7 +34,9 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
     - [ ] Transiciones de botones
 
-        - [ ] Submit
+        - [ ] Repasar botones
+
+        - [X] Submit
 
         - [X] Menú
 

@@ -28,6 +28,8 @@ const option03 = document.getElementById('option03')
 const option04 = document.getElementById('option04')
 const allOptions = document.getElementsByClassName("question__option")
 const visualCountDown = document.getElementById('countDown')
+const timerBar = document.getElementById('timerbar')
+
 
 // stats pages's constant
 const pageStats = document.getElementById('stats-page')
@@ -258,7 +260,18 @@ function nextQuestion() {
     console.log(counterQuestion);
 }
 
+function resetTimerBar() {
+    timerBar.style.animation = 'none'
+    timerBar.offsetHeight;
+    timerBar.style.animation = null
+    timerBar.style.animation = 'timeBar 15s linear'
+    console.log('funciona');
+}
+
+console.log(timerBar.parentElement);
+
 function sendAnswer() {
+    resetTimerBar()
     if (counterQuestion == 9) {
         quizEnd();
     } else {
@@ -309,7 +322,8 @@ startForm.addEventListener('submit', (e) => {
     printQuiz()
     goTo(pageQuestion);
     nameLabel.classList.remove('name__label--styled')
-    resetCountDown()
+    resetCountDown();
+    resetTimerBar();
 })
 
 questionForm.addEventListener('submit', (e) => {
