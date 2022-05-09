@@ -232,6 +232,27 @@ function printLeaderboard() {
     }
 }
 
+function quizEnd() {
+    counterQuestion = 0;
+    deleteSelecteds();
+    updateChart();
+    includeInDB();
+    updateLeaderboard();
+    dbSync.toLocalStorage();
+    printStats();
+    printLeaderboard();
+    goTo(pageStats);
+    currentPoints = 0;
+}
+
+function nextQuestion() {
+    deleteSelecteds();
+    counterQuestion++;
+    printQuiz()
+    console.log(currentPoints);
+    console.log(counterQuestion);
+}
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -258,22 +279,9 @@ questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
     isTrue()
     if (counterQuestion == 9) {
-        counterQuestion = 0;
-        deleteSelecteds();
-        updateChart();
-        includeInDB();
-        updateLeaderboard();
-        dbSync.toLocalStorage();
-        printStats();
-        printLeaderboard();
-        goTo(pageStats);
-        currentPoints = 0;
+        quizEnd();
     } else {
-        deleteSelecteds();
-        counterQuestion++;
-        printQuiz()
-        console.log(currentPoints);
-        console.log(counterQuestion);
+        nextQuestion();
     }
 })
 
