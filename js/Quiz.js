@@ -43,7 +43,6 @@ const positionScore = document.getElementById('position-score')
 const pageLeaderboard = document.getElementById('leaderboard-page')
 const nameCells = document.getElementsByClassName('table__name')
 const scoreCells = document.getElementsByClassName('table__score')
-console.log(nameCells);
 
 //question and answer's constant
 let questions = []
@@ -59,6 +58,11 @@ let currentAnswers = []
 
 //current points
 let currentPoints = 0;
+
+//current seconds
+let currentSeconds = 0;
+
+let aux = 0;
 
 //DB
 let hotDB = []
@@ -184,21 +188,22 @@ function deleteSelecteds() {
 function isTrue() {
     if (currentAnswers[selectedOption()].correct == true) {
         currentPoints++;
+        currentSeconds += hidenCountDown;
     }
 }
 
 function includeInDB() {
     let user = {};
     user.user = currentUser;
-    user.points = currentPoints;
+    user.points = ((currentPoints * 1000) + (currentSeconds * 100));
+    aux = user.points
     hotDB.push(user)
-    console.log(hotDB);
 }
 
 function yourPosition() {
     let respuesta
     hotDB.forEach((element, iteration) => {
-        if ((element.user == currentUser) && (element.points == currentPoints)) {
+        if ((element.user == currentUser) && (element.points == aux)) {
             respuesta = iteration;
         }
     })
@@ -207,7 +212,6 @@ function yourPosition() {
 
 function printStats() {
     endScore.innerHTML = `${currentPoints}/10`
-    console.log(yourPosition());
     positionScore.innerText = `#${(yourPosition()+1)}`
 }
 
@@ -225,7 +229,6 @@ function updateLeaderboard() {
             i = 0;
         }
     }
-    console.log(hotDB);
 }
 
 function printLeaderboard() {
@@ -242,22 +245,22 @@ function printLeaderboard() {
 function quizEnd() {
     counterQuestion = 0;
     deleteSelecteds();
-    updateChart();
     includeInDB();
-    updateLeaderboard();
     dbSync.toLocalStorage();
+    clearInterval(countDownInterval)
+    updateChart();
+    updateLeaderboard();
     printStats();
     printLeaderboard();
     goTo(pageStats);
     currentPoints = 0;
+    currentSeconds = 0;
 }
 
 function nextQuestion() {
     deleteSelecteds();
     counterQuestion++;
     printQuiz()
-    console.log(currentPoints);
-    console.log(counterQuestion);
 }
 
 function resetTimerBar() {
@@ -265,7 +268,6 @@ function resetTimerBar() {
     timerBar.offsetHeight;
     timerBar.style.animation = null
     timerBar.style.animation = 'timeBar 15s linear'
-    console.log('funciona');
 }
 
 function sendAnswer() {
@@ -350,9 +352,6 @@ showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 
 dbSync.toHotDB()
 
-console.log(endGraph.value);
-
-console.log(hotDB);
 
 printLeaderboard()
 
