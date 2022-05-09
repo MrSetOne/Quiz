@@ -444,7 +444,7 @@ main>* {
 .form__submit {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .form__submit,

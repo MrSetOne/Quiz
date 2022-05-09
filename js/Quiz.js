@@ -27,6 +27,7 @@ const option02 = document.getElementById('option02')
 const option03 = document.getElementById('option03')
 const option04 = document.getElementById('option04')
 const allOptions = document.getElementsByClassName("question__option")
+const visualCountDown = document.getElementById('countDown')
 
 // stats pages's constant
 const pageStats = document.getElementById('stats-page')
@@ -253,6 +254,14 @@ function nextQuestion() {
     console.log(counterQuestion);
 }
 
+function sendAnswer() {
+    if (counterQuestion == 9) {
+        quizEnd();
+    } else {
+        nextQuestion();
+    }
+}
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -277,12 +286,8 @@ startForm.addEventListener('submit', (e) => {
 
 questionForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    isTrue()
-    if (counterQuestion == 9) {
-        quizEnd();
-    } else {
-        nextQuestion();
-    }
+    isTrue();
+    sendAnswer();
 })
 
 Array.from(allOptions).forEach(item => {
