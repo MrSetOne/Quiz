@@ -305,6 +305,7 @@ function chronoDown() {
 function stater() {
     dbSync.toHotDB()
     printLeaderboard()
+    clearInterval(countDownInterval)
 }
 
 // NavListeners
@@ -355,5 +356,11 @@ userNameInput.addEventListener("click", () => nameLabel.classList.add('name__lab
 showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 
 stater();
+
+const tstr = setInterval(() => {
+    console.log(hidenCountDown);
+}, 1000);
+
+// Testea esta vaina
 
 /* ------------------ DevZone ------------------ */
