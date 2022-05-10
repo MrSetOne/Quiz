@@ -48,6 +48,9 @@ Este proyecto fue planteado como un ejercicio del bootcamp [TheBridge](https://w
 
 ### Textos no formateados
 
+Descargamos un API de 10 preguntas para añadir al proyecto, cuando sacamos los Datas que necesitamos algunas sintacsis no estan formateados, entonces buscamos solucion por la web, al final lo hemos solucionado con la funcion replace(),que cambia una parabla por la otra en el API entero.
+
+
 ### Ordenar puntuaciones
 
 ### Extraccion y validacion de respuestas
