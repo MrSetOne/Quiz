@@ -233,7 +233,9 @@ function updateLeaderboard() {
 
 function printLeaderboard() {
     for (let i = 0; i < 10; i++) {
+        console.log('entras?')
         if (hotDB[i] != undefined) {
+            console.log('e', hotDB[i])
             nameCells[i].innerText = hotDB[i].user;
             scoreCells[i].innerText = hotDB[i].points
         } else {
@@ -306,6 +308,7 @@ function chronoDown() {
 
 function stater() {
     dbSync.toHotDB()
+    updateLeaderboard()
     printLeaderboard()
     clearInterval(countDownInterval)
 }
