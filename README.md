@@ -1,23 +1,23 @@
 # <center>GameQuiz!</center>
 
-* Sobre el proyecto
-    * Instalación y despliegue
-    * Tecnologías usadas
-    * Origen
-    * Objetivos
-    * Concepto e inspiración 
+* [Sobre el proyecto](#sobre-el-proyecto)
+    * [Instalación y despliegue](#instalacion-y-despliegue----falta-subir-el-enlace)
+    * [Tecnologías usadas](#tecnologías-usadas)
+    * [Origen](#origen)
+    * [Objetivos](#objetivos)
+    * [Concepto e inspiración](#concepto-e-inspiración) 
 
-* Retos presentados
-    * setInterval
-    * Textos no formateados
-    * Ordenar puntuaciones
-    * Extraccion y validacion de respuestas
-    * Botones dinamicos
-    * Sistema de puntuación
+* [Retos presentados](#retos-presentados)
+    * [setInterval](#setinterval)
+    * [Textos no formateados](#textos-no-formateados)
+    * [Ordenar puntuaciones](#ordenar-puntuaciones)
+    * [Extraccion y validacion de respuestas](#extraccion-y-validacion-de-respuestas)
+    * [Botones dinamicos](#botones-dinamicos)
+    * [Sistema de puntuación](#sistema-de-puntuación)
 
-* En el tintero
-* Agradecimientos
-* Autores
+* [En el tintero](#en-el-tintero)
+* [Agradecimientos](#agradecimientos)
+* [Autores](#autores)
 
 ## Sobre el proyecto
 
