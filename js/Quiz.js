@@ -247,7 +247,6 @@ function quizEnd() {
     deleteSelecteds();
     includeInDB();
     dbSync.toLocalStorage();
-    clearInterval(countDownInterval)
     updateChart();
     updateLeaderboard();
     printStats();
@@ -255,6 +254,9 @@ function quizEnd() {
     goTo(pageStats);
     currentPoints = 0;
     currentSeconds = 0;
+    setInterval(() => {
+        clearInterval(countDownInterval)
+    }, 500);
 }
 
 function nextQuestion() {
@@ -356,11 +358,5 @@ userNameInput.addEventListener("click", () => nameLabel.classList.add('name__lab
 showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 
 stater();
-
-const tstr = setInterval(() => {
-    console.log(hidenCountDown);
-}, 1000);
-
-// Testea esta vaina
 
 /* ------------------ DevZone ------------------ */
