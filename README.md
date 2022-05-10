@@ -1,30 +1,72 @@
-# Project Quiz
+# <center>GameQuiz!</center>
+
+* Sobre el proyecto
+    * Instalación y despliegue <!-- SIN TERMINAR -->
+    * Tecnologías usadas
+    * Origen
+    * Objetivos
+    * Concepto e inspiración 
+
+* Retos presentados
+    * setInterval
+    * Textos no formateados <!-- &#039 -->
+    * Ordenar puntuaciones
+    * Extraccion y validacion de respuestas
+    * Botones dinamicos
+
+* Agradecimientos
+* Autores
+
+## Sobre el proyecto
+
+### Instalacion y despliegue <!-- FALTA SUBIR EL ENLACE -->
+
+Para instalar esta pagina solo tienes que tener acceso a internet y ejecutar el comando en consola git clone `https://github.com/MrSetOne/Quiz.git`, tambien se puede acceder a través de este `enlace` 
+
+### Tecnologías usadas
+
+HTML, CSS y Javascript con la libreria [ChartJS](https://www.chartjs.org/) y la API [OpenTrivia](https://opentdb.com/api_config.php)
+
+### Origen
+
+Este proyecto fue planteado como un ejercicio del bootcamp [TheBridge](https://www.thebridge.tech/), consistia en genera un Quiz basandonos en JavaScript Vanilla, a excepcion de la libreria CharJs.
+
+### Objetivos
+
+* El Quiz constará de 10 preguntas. Cada pregunta tendrá 4 opciones y sólo una de ellas será la correcta.
+
+* Deberán ser preguntas que vengan de https://opentdb.com/ o otras API’s que busqueis.
+* La aplicación tendrá que ser una SPA (single-page application). Sólo una pregunta cada vez en pantalla.
+
+### Concepto e inspiración
+
+<!-- SIN RELLENAR -->
+
+## Retos presentados
+
+### setInterval
+
+### Textos no formateados
+
+### Ordenar puntuaciones
+
+### Extraccion y validacion de respuestas
+
+### Botones dinamicos
+
+<!--
+
+=====================================================
 
 https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
+=====================================================
+
 ## Todo
 
-- [X] Poner tiempo limite (Probar con promesas) (Shan y Mike)
-
-- [X] Definir estilos y maquetacion (Mike)
-
-- [X] Seleccion de respuesta en radial
-
-- [X] BtnFalconMaster5
-
-- [X] submitBtn.addEventListener('click', ()=> goTo(pageQuestion)) (Shan)
+- [ ] Burger Menu
 
 - [ ] Selector de dificultad
-
-- [X] Analizar caracteres raros
-
-    - [X] &quot
-
-    - [X] &#039
-
-- [X] Maquetar y funcionalizar leaderboard
-
-- [X] Dar estilos a Starter
 
 - [ ] Animaciones frontEnd
 
@@ -36,16 +78,13 @@ https://fonts.google.com/share?selection.family=Montserrat:wght@100;400;700
 
         - [ ] Repasar botones
 
-        - [X] Submit
-
-        - [X] Menú
-
     - [ ] Spinner
-
-- [X] Refactorizar updateLeaderboard()
 
 - [ ] Refactorizar AnswersBtns
 
 - [ ] Colocar la variante selected del nav
 
-- [ ] Funcion Starter
+==============================================
+
+
+-->
