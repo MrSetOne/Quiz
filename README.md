@@ -48,6 +48,9 @@ Este proyecto fue planteado como un ejercicio del bootcamp [TheBridge](https://w
 
 ### Textos no formateados
 
+Descargamos un API de 10 preguntas para añadir al proyecto, cuando sacamos los Datas que necesitamos algunas sintacsis no estan formateados, entonces buscamos solucion por la web, probamos con la function replace() pero solo cambia una no todos, al final usamos con innerTMHL y se formatea todos los sintacsis correctamente.
+
+
 ### Ordenar puntuaciones
 
 ### Extraccion y validacion de respuestas
