@@ -45,11 +45,32 @@ Este proyecto fue planteado como un ejercicio del bootcamp [TheBridge](https://w
 ## Retos presentados
 
 ### setInterval
+Para diversas funciones de este proyecto hemos tenido que investigar e implementar el metodo setInterval, el cual se encarga de ejecutar una funcion durante cada 'x' tiempo hasta que ejecutes su detención.
+
+Ejemplo de setInterval:
+```JavaScript
+let intentos = 0;
+
+const intervalo = setInterval(intentaloOtraVez, 2000)
+
+function intentaloOtraVez() {
+    console.log("¡Ahora si que si lo he entendido!")
+    if (intentos == 5) {
+        console.log('Vale... Soy gilipollas, porfin funciona... ( ˘︹˘ ) ')
+        clearInterval(intervalo)
+    } else {
+        setTimeout(() => {
+            console.log("Igual no lo he entendido...\n");
+            intentos++;
+        }, 1000);
+    }
+}
+```
+
 
 ### Textos no formateados
 
 Descargamos un API de 10 preguntas para añadir al proyecto, cuando sacamos los Datas que necesitamos algunas sintacsis no estan formateados, entonces buscamos solucion por la web, probamos con la function replace() pero solo cambia una no todos, al final usamos con innerTMHL y se formatea todos los sintacsis correctamente.
-
 
 ### Ordenar puntuaciones
 
