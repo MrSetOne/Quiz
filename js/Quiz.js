@@ -302,6 +302,11 @@ function chronoDown() {
     }
 }
 
+function stater() {
+    dbSync.toHotDB()
+    printLeaderboard()
+}
+
 // NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
@@ -349,12 +354,6 @@ userNameInput.addEventListener("click", () => nameLabel.classList.add('name__lab
 
 showLeaderBoard.addEventListener('click', () => goTo(pageLeaderboard))
 
-// Añadir al sistema starter
-
-dbSync.toHotDB()
-
-printLeaderboard()
-
-clearInterval(countDownInterval)
+stater();
 
 /* ------------------ DevZone ------------------ */
