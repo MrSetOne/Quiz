@@ -1,22 +1,18 @@
-//constants of navbar
 const btnPlay = document.getElementById('btn-play')
 const btnLeaderboard = document.getElementById('btn-Leaderboard')
 
-//constants of wellcome page
 const pageWellcome = document.getElementById('wellcome-page')
 const btnWellcome = document.getElementById('btn-wellcome')
 
-//constants of start page
-const pageStart = document.getElementById('start-page') //Page
-const startForm = document.getElementById('start-form') //Form
-const userNameInput = document.getElementById('userName-input') //Input
-const submitBtn = document.getElementById('submit-btn') // Submit
-const nameLabel = document.getElementById('name-label') // Label
+const pageStart = document.getElementById('start-page')
+const startForm = document.getElementById('start-form')
+const userNameInput = document.getElementById('userName-input')
+const submitBtn = document.getElementById('submit-btn')
+const nameLabel = document.getElementById('name-label')
 
-//constants of question page
-const pageQuestion = document.getElementById('question-page') //Page
-const questionTitle = document.getElementById('question-title') // Question
-const questionForm = document.getElementById('question-form') //
+const pageQuestion = document.getElementById('question-page')
+const questionTitle = document.getElementById('question-title')
+const questionForm = document.getElementById('question-form')
 const heroCount = document.getElementById('hero-count')
 const option1 = document.getElementById('option1')
 const option2 = document.getElementById('option2')
@@ -30,8 +26,6 @@ const allOptions = document.getElementsByClassName("question__option")
 const visualCountDown = document.getElementById('countDown')
 const timerBar = document.getElementById('timerbar')
 
-
-// stats pages's constant
 const pageStats = document.getElementById('stats-page')
 const endScore = document.getElementById('endScore')
 const endGraph = document.getElementById("endGraph")
@@ -39,32 +33,24 @@ const playAgain = document.getElementById('play-again-btn')
 const showLeaderBoard = document.getElementById('leaderboard-btn')
 const positionScore = document.getElementById('position-score')
 
-//leaderboard page's constant
 const pageLeaderboard = document.getElementById('leaderboard-page')
 const nameCells = document.getElementsByClassName('table__name')
 const scoreCells = document.getElementsByClassName('table__score')
 
-//question and answer's constant
 let questions = []
 
-//current user
 let currentUser = ""
 
-//question counter
 let counterQuestion = 0;
 
-//current Answers
 let currentAnswers = []
 
-//current points
 let currentPoints = 0;
 
-//current seconds
 let currentSeconds = 0;
 
 let aux = 0;
 
-//DB
 let hotDB = []
 
 let scoreChart = new Chart(endGraph, {
@@ -96,16 +82,9 @@ let scoreChart = new Chart(endGraph, {
     }
 })
 
-let leaderboardInfo = {
-    users: [],
-    points: []
-}
-
 let hidenCountDown = 15;
 
 let countDownInterval = setInterval(chronoDown, 1000);
-
-// Functions
 
 const dbSync = {
     toLocalStorage: () => {
@@ -180,9 +159,7 @@ function deleteSelecteds() {
     Array.from(allOptions).forEach(item => {
         item.classList.remove("question__option--selected");
         item.children[1].checked = false;
-
     })
-
 }
 
 function isTrue() {
@@ -313,15 +290,16 @@ function stater() {
     clearInterval(countDownInterval)
 }
 
-// NavListeners
 btnPlay.addEventListener('click', () => {
     goTo(pageStart);
     getQuestions()
 })
+
 btnWellcome.addEventListener('click', () => {
     goTo(pageStart);
     getQuestions()
 })
+
 btnLeaderboard.addEventListener('click', () => goTo(pageLeaderboard))
 
 startForm.addEventListener('submit', (e) => {
