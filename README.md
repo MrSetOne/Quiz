@@ -130,6 +130,8 @@ Debido al plazo que hemos tenido para realizar el proyecto se han quedado alguna
 
 - [ ] Colocar la variante selected del nav
 
+-[ ] Implementacion de sonidos
+
 ## Agradecimientos
 
 Este proyecto queriamos agradecerselo a nuestra profesora [Sofia](https://github.com/SofiaPinilla) por pelearse junto a nosotros con los setIntervals y a [David](https://github.com/Dubesor22) por darme otro punto de vista para enfrentarme al temido #NaN.
