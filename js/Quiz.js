@@ -86,6 +86,8 @@ let hidenCountDown = 15;
 
 let countDownInterval = setInterval(chronoDown, 1000);
 
+let cheats = false;
+
 const dbSync = {
     toLocalStorage: () => {
         localStorage.db = JSON.stringify(hotDB);
@@ -141,7 +143,9 @@ function generateRandomAnswers() {
         currentAnswers.push({ answer: item, correct: false })
     })
     currentAnswers.splice((Math.floor(Math.random() * 4)), 0, { answer: questions[counterQuestion].correct_answer, correct: true })
-    console.log(currentAnswers);
+    if (cheats == true) {
+        console.log(currentAnswers);
+    }
 }
 
 function printQuiz() {
@@ -210,9 +214,7 @@ function updateLeaderboard() {
 
 function printLeaderboard() {
     for (let i = 0; i < 10; i++) {
-        console.log('entras?')
         if (hotDB[i] != undefined) {
-            console.log('e', hotDB[i])
             nameCells[i].innerText = hotDB[i].user;
             scoreCells[i].innerText = hotDB[i].points
         } else {
