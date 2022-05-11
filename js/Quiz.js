@@ -235,9 +235,7 @@ function quizEnd() {
     goTo(pageStats);
     currentPoints = 0;
     currentSeconds = 0;
-    setInterval(() => {
-        clearInterval(countDownInterval)
-    }, 500);
+    setTimeout(() => { clearInterval(countDownInterval) }, 2000)
 }
 
 function nextQuestion() {
@@ -312,7 +310,9 @@ startForm.addEventListener('submit', (e) => {
     printQuiz()
     goTo(pageQuestion);
     nameLabel.classList.remove('name__label--styled')
-    resetCountDown();
+    hidenCountDown = 15
+    visualCountDown.innerHTML = 15
+    countDownInterval = setInterval(chronoDown, 1000);
     resetTimerBar();
 })
 
