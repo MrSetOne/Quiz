@@ -130,7 +130,9 @@ Debido al plazo que hemos tenido para realizar el proyecto se han quedado alguna
 
 - [ ] Colocar la variante selected del nav
 
--[ ] Implementacion de sonidos
+- [ ] Implementacion de sonidos
+
+- [ ] Validar username vacio nOOb
 
 ## Agradecimientos
 
