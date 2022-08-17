@@ -23,7 +23,7 @@
 
 ### Instalacion y despliegue <!-- FALTA SUBIR EL ENLACE -->
 
-Para instalar esta pagina solo tienes que tener acceso a internet y ejecutar el comando en consola git clone `https://github.com/MrSetOne/Quiz.git`, tambien se puede acceder a través de este `enlace` 
+Para instalar esta pagina solo tienes que tener acceso a internet y ejecutar el comando en consola git clone `https://github.com/MrSetOne/Quiz.git`, tambien se puede acceder a través de [este enlace](https://mrsetone.github.io/Quiz/)
 
 ### Tecnologías usadas
 
